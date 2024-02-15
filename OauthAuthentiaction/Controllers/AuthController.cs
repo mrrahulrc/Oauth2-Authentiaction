@@ -19,7 +19,7 @@ namespace OauthAuthentiaction.Controllers
             que.Add("response_type","code");
             que.Add("client_id", configuration.GetValue<string>("Authentication:client_id"));
             que.Add("scope", String.Join(' ',OAuthScope.scope));
-            que.Add("redirect_uri", configuration.GetValue<string>("Authentication:redirect_uri")); 
+            que.Add("redirect_uri", configuration.GetValue<string>("Authentication:redirect_uri"));
 
             return Redirect(OAuthUrl.authCodeUrl + que.ToQueryString());
         }
